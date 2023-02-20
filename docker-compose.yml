@@ -1,0 +1,26 @@
+version: '3'
+networks:
+  app:
+
+services:
+  redis:
+    networks:
+      - app
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    healthcheck:
+      test: [ "CMD", "redis-cli","ping" ]
+  api:
+    networks:
+      - app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: server
+    env_file: .env
+    depends_on:
+      - redis
+    ports:
+      - 8080:8080

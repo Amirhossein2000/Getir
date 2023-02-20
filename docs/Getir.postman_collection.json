@@ -1,0 +1,450 @@
+{
+	"info": {
+		"_postman_id": "a7bd840a-f053-4184-a416-6a9536d1b8f1",
+		"name": "Getir",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6093957"
+	},
+	"item": [
+		{
+			"name": "MongoFetch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"startDate\": \"2016-01-26\",\n    \"endDate\": \"2018-02-02\",\n    \"minCount\": 1,\n    \"maxCount\": 3000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{Address}}/fetch",
+					"protocol": "https",
+					"host": [
+						"{{Address}}"
+					],
+					"path": [
+						"fetch"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "MongoFetch example 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startDate\": \"2016-01-26\",\n    \"endDate\": \"2018-02-02\",\n    \"minCount\": 1,\n    \"maxCount\": 3000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fetch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetch"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Feb 2023 23:38:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "211"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 0,\n    \"msg\": \"success\",\n    \"records\": [\n        {\n            \"key\": \"TAKwGc6Jr4i8Z487\",\n            \"created_at\": \"2017-01-28T01:22:14.398Z\",\n            \"total_count\": 2800\n        },\n        {\n            \"key\": \"NAeQ8eX7e5TEg7oH\",\n            \"created_at\": \"2017-01-27T08:19:14.135Z\",\n            \"total_count\": 2900\n        }\n    ]\n}"
+				},
+				{
+					"name": "MongoFetch example 404",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startDate\": \"2016-01-26\",\n    \"endDate\": \"2018-02-02\",\n    \"minCount\": 1,\n    \"maxCount\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fetch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetch"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Feb 2023 23:40:01 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 3,\n    \"msg\": \"Not Found\",\n    \"records\": null\n}"
+				},
+				{
+					"name": "MongoFetch example 400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startDate\": \"2016-01-\",\n    \"endDate\": \"2018-02-02\",\n    \"minCount\": 1,\n    \"maxCount\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fetch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetch"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Feb 2023 23:49:00 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"msg\": \"Invalid startDate\",\n    \"records\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "GetInMemory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{Address}}/in-memory?key=testKey",
+					"protocol": "https",
+					"host": [
+						"{{Address}}"
+					],
+					"path": [
+						"in-memory"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "testKey"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetInMemory example 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/in-memory?key=testKey",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"in-memory"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "testKey"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Feb 2023 23:51:39 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"key\": \"testKey\",\n    \"value\": \"testValue\"\n}"
+				},
+				{
+					"name": "GetInMemory example 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/in-memory?key=test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"in-memory"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Feb 2023 23:52:26 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Code\": 3,\n    \"Message\": \"Not Found\"\n}"
+				},
+				{
+					"name": "GetInMemory example 400",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/in-memory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"in-memory"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Feb 2023 23:53:19 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Code\": 1,\n    \"Message\": \"Missing key parameter\"\n}"
+				}
+			]
+		},
+		{
+			"name": "SetInMemory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key\":\"testKey\",\n    \"value\":\"testValue\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{Address}}/in-memory",
+					"protocol": "https",
+					"host": [
+						"{{Address}}"
+					],
+					"path": [
+						"in-memory"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SetInMemory example 400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/in-memory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"in-memory"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Feb 2023 23:57:39 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Code\": 1,\n    \"Message\": \"Key and Value are required\"\n}"
+				},
+				{
+					"name": "SetInMemory example 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\":\"testKey\",\n    \"value\":\"testValue\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/in-memory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"in-memory"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Feb 2023 23:58:04 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"key\": \"testKey\",\n    \"value\": \"testValue\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "Address",
+			"value": "https://z4tdfk5eu2.eu-west-1.awsapprunner.com/"
+		}
+	]
+}
